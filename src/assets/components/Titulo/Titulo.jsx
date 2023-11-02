@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import "./Titulo.css"
 
 const Titulo = ({titulo,subTitulo}) =>{
@@ -8,5 +9,10 @@ const Titulo = ({titulo,subTitulo}) =>{
         </div>
     )
   }
+
+  Titulo.propTypes = {
+    titulo: PropTypes.string.isRequired,
+    subTitulo: PropTypes.string.isRequired,
+  };
 
 export default Titulo

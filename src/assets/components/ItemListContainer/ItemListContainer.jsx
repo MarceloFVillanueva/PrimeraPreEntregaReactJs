@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import "./ItemListContainer.css"
 
 function ItemListContainer({greeting = 'Saludo por defecto'}) {
@@ -7,5 +8,9 @@ function ItemListContainer({greeting = 'Saludo por defecto'}) {
     </div>
   )
 }
+
+ItemListContainer.propTypes = {
+  greeting: PropTypes.string.isRequired,
+};
 
 export default ItemListContainer
