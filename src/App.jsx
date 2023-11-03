@@ -1,7 +1,7 @@
 import NavBar from './assets/components/NavBar/NavBar'
+import Titulo from "./assets/components/Titulo/Titulo"
 import ProductListContainer from './assets/components/ItemListContainer/ItemListContainer'
-import Titulo from './assets/components/Titulo/Titulo';
-import ItemCount from './assets/components/IntemCount/ItemCount'
+import ItemDetailContainer from './assets/components/ItemDetailContainer/ItemDetailContainer';
 
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,9 +11,9 @@ function App() {
 
     <>
       <NavBar/>
-      <Titulo titulo='Segunda Pre-Entrega' subTitulo='Marcelo Villanueva'/>
-      <ProductListContainer greeting='Bienvenidos!!!!'/>
-      <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log('Cantidad agregada ',quantity)}/>
+      <Titulo titulo='Segunda Pre-Entrega | Marcelo Villanueva' subTitulo='Películas'/>
+      <ProductListContainer/>
+      <ItemDetailContainer/>
     </>
   )
 }

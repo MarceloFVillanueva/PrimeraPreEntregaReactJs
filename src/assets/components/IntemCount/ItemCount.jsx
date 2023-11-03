@@ -12,9 +12,13 @@ const ItemCount = ({stock,initial,onAdd}) => {
     }
 
     const decrement = () => {
-        if(quantity > 1){
+        if(quantity >= 1){
             setQuantity(quantity-1)
         }
+    }
+
+    const handleOnAdd = () => {
+        onAdd(quantity)
     }
 
     return(
@@ -25,7 +29,7 @@ const ItemCount = ({stock,initial,onAdd}) => {
                 <button className="button" onClick={increment}>+</button>
             </div>
             <div>
-                <button className="button btn-carrito" onClick={() => onAdd(quantity)} disabled={!stock}>
+                <button className="button btn-carrito" onClick={onAdd}>
                     Agregar al carrito
                 </button>
             </div>
@@ -34,9 +38,9 @@ const ItemCount = ({stock,initial,onAdd}) => {
 }
 
 ItemCount.propTypes = {
-    stock: PropTypes.string.isRequired,
-    initial: PropTypes.string.isRequired,
-    onAdd: PropTypes.string.isRequired,
+    stock: PropTypes.number.isRequired,
+    initial: PropTypes.number.isRequired,
+    onAdd: PropTypes.func.isRequired
   };
 
 export default ItemCount

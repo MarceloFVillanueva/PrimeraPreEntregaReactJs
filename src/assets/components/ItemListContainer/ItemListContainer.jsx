@@ -1,16 +1,27 @@
-import PropTypes from "prop-types";
+import { useState,useEffect } from "react";
+import { getProducts } from "../../../asyncMock";
 import "./ItemListContainer.css"
+import ItemList from "../ItemList/ItemList";
 
-function ItemListContainer({greeting = 'Saludo por defecto'}) {
+const ItemListContainer = () => {
+
+  const [products, setProducts] = useState([])
+
+  useEffect(()=> {
+    getProducts()
+    .then((res) => {
+      setProducts(res)
+    })
+    .catch((err) =>{
+      console.log(err)
+    })
+  }, [])
+
   return (
     <div>
-        <p className="greeting">{greeting}</p>
+      <ItemList products={products}/>
     </div>
   )
 }
-
-ItemListContainer.propTypes = {
-  greeting: PropTypes.string.isRequired,
-};
 
 export default ItemListContainer
