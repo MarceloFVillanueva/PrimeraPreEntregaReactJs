@@ -1,12 +1,27 @@
-import Titulo from "../Titulo/Titulo"
+import { useState } from "react"
+import Form from "./Form"
+import formWithValidation from "./formWithValidation"
+
+const FormWithValidation = formWithValidation(Form)
 
 const Formulario = () => {
-    return (
-      <form>
-        <Titulo titulo='titulo formulario' subTitulo='subtitulo de formulario'/>
-        <input type="text" placeholder='ingrese el nombre'/>
-      </form>
-    )
-  }
+  const [formData,setFormData] = useState({
+    nombre: "",
+    correo: ""
+  })
+
+  const handleOnChange = (evt) => {
+    setFormData({
+      ...formData,
+      [evt.target.name]:evt.target.value}
+      )}
+
+  return (
+    <FormWithValidation 
+      formData={formData} 
+      handleOnChange={handleOnChange}
+    />
+  )
+}
 
 export default Formulario

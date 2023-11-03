@@ -1,22 +1,10 @@
 import PropTypes from "prop-types";
+import { useCounter } from "../hook/useCounter";
 import "./ItemCount.css"
-import { useState } from "react";
 
 const ItemCount = ({stock,initial,onAdd}) => {
-    const [quantity,setQuantity] = useState(initial)
 
-    const increment = () => {
-        if(quantity < stock){
-            setQuantity(quantity+1)
-        }
-    }
-
-    const decrement = () => {
-        if(quantity >= 1){
-            setQuantity(quantity-1)
-        }
-    }
-
+    const {quantity,increment,decrement} = useCounter(initial,stock)
     const handleOnAdd = () => {
         onAdd(quantity)
     }
@@ -29,7 +17,7 @@ const ItemCount = ({stock,initial,onAdd}) => {
                 <button className="button" onClick={increment}>+</button>
             </div>
             <div>
-                <button className="button btn-carrito" onClick={onAdd}>
+                <button className="button btn-carrito" onClick={handleOnAdd}>
                     Agregar al carrito
                 </button>
             </div>
