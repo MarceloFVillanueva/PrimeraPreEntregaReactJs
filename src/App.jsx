@@ -1,8 +1,10 @@
 import NavBar from './assets/components/NavBar/NavBar'
-import Titulo from "./assets/components/Titulo/Titulo"
-import ProductListContainer from './assets/components/ItemListContainer/ItemListContainer'
+// import Titulo from "./assets/components/Titulo/Titulo"
 import ItemDetailContainer from './assets/components/ItemDetailContainer/ItemDetailContainer';
-import Formulario from './assets/components/Formulario/Formulario';
+import ItemListContainer from './assets/components/ItemListContainer/ItemListContainer';
+import Nosotros from "./assets/components/Nosotros/Nosotros"
+// import Formulario from './assets/components/Formulario/Formulario';
+import { BrowserRouter,Routes,Route } from "react-router-dom";
 
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,11 +13,20 @@ function App() {
   return (
 
     <>
-      <NavBar/>
-      <Titulo titulo='Segunda Pre-Entrega | Marcelo Villanueva' subTitulo='Películas'/>
-      <ProductListContainer/>
-      <ItemDetailContainer/>
-      <Formulario/>
+      <BrowserRouter>
+        
+        <NavBar/>
+
+        <Routes>
+          <Route path='/' element={<ItemListContainer />}/>
+          <Route path='/item/:id' element={<ItemDetailContainer />}/>
+          <Route path='/nosotros' element={<Nosotros />}/>
+          <Route path='/nosotros' element={<Nosotros />}/>
+        </Routes>
+
+        <ItemListContainer/>
+
+      </BrowserRouter>
     </>
   )
 }
