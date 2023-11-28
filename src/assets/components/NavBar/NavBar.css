@@ -5,9 +5,22 @@
     font-family: Helvetica;
   }
 
-nav { 
-    color: #fff; 
-    padding: 10px; 
-    top: 0;
-    font-weight: bold;
+.nav-bar {
+  background-color: rgb(82, 82, 226);
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid black;
   }
+
+.link-nav {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 1.2rem;
+}
+
+.link-nav:hover {
+  text-decoration: underline;
+  color: rgba(255, 255, 255, 0.75);
+}
