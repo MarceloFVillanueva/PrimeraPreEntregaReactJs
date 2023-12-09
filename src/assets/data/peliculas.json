@@ -1,4 +1,4 @@
-const products = [
+[
     {
         "id": 1,
         "title": "Secrets of the Heart (Secretos del Corazón)",
@@ -48,19 +48,3 @@ const products = [
         "image": "http://dummyimage.com/250x350.png/dddddd/000000"
     }
 ]
-
-export const getProducts = () => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(products)
-        }, 500)
-    })
-}
-
-export const getProductById = (productID) => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(products.find(prod => prod.id === productID))
-        }, 500)
-    })
-}

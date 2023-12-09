@@ -2,14 +2,14 @@ import PropTypes from "prop-types";
 import Item from "../Item/Item"
 import "./ItemList.css"
 
-const ItemList = ({products}) => {
+const ItemList = ({peliculas}) => {
   return (
     <div className="cards-container">
         {
-            products.length > 0  &&
-            products.map((product) => {
+            peliculas.length > 0  &&
+            peliculas.map((pelicula) => {
             return (
-                <Item key= {product.id} product={product}/>
+                <Item key={pelicula.id} pelicula={pelicula}/>
               )
             })
         }
@@ -18,7 +18,7 @@ const ItemList = ({products}) => {
 }
 
 ItemList.propTypes = {
-    products: PropTypes.array.isRequired
+    peliculas: PropTypes.array.isRequired
   };
 
 export default ItemList

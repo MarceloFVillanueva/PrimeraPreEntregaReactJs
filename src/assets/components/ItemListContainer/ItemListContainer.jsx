@@ -1,25 +1,23 @@
 import { useState,useEffect } from "react";
-import { getProducts } from "../../../asyncMock";
+import pedirPeliculas from "../../help/pedirPeliculas"
+
 import "./ItemListContainer.css"
 import ItemList from "../ItemList/ItemList";
 
 const ItemListContainer = () => {
 
-  const [products, setProducts] = useState([])
+  const [peliculas, setPeliculas] = useState([])
 
-  useEffect(()=> {
-    getProducts()
-    .then((res) => {
-      setProducts(res)
-    })
-    .catch((err) =>{
-      console.log(err)
-    })
-  }, [])
+  useEffect(() => {
+    pedirPeliculas()
+      .then((res) => {
+        setPeliculas(res);
+      })
+  },[])
 
   return (
     <div>
-      <ItemList products={products}/>
+      <ItemList peliculas={peliculas} /> 
     </div>
   )
 }

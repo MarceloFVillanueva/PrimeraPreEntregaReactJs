@@ -1,16 +1,19 @@
-import "./ItemDetailContainer.css"
 import { useEffect, useState } from "react"
-import { getProductById } from "../../../asyncMock"
 import ItemDetail from "../ItemDetail/ItemDetail"
+import { useParams } from "react-router-dom"
+import pedirPeliculaPorNombre from "../../help/pedirPeliculaPorNombre.js"
+
+import "./ItemDetailContainer.css"
 
 const ItemDetailContainer = () => {
 
-    const [product,setProducts] = useState()
+    const [pelicula,setPelicula] = useState()
+    const title = useParams().title;
 
     useEffect(() => {
-        getProductById(1)
+        pedirPeliculaPorNombre(title)
             .then(response => {
-                setProducts(response)
+                setPelicula(response)
             })
             .catch(err =>{
                 console.log(err)
@@ -19,7 +22,7 @@ const ItemDetailContainer = () => {
     
     return (
         <div className="cards-container">
-            <ItemDetail {...product}/>
+            <ItemDetail {...pelicula}/>
         </div>
     )
 }
