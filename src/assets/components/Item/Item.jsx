@@ -15,7 +15,7 @@ const Item = ({pelicula}) => {
       </picture>
       <section className="movie-details">
         <p>Categoria: {pelicula.category}</p>
-        <p>Descripción: {pelicula.description}</p>
+        <p>Descripción: {pelicula.short_description}</p>
         <p>Precio: ${pelicula.price}</p>
       </section>
       <Link className="ver-mas" to={`/peliculas/${pelicula.title}`}>Ver más</Link>

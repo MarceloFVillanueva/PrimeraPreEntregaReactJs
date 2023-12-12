@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import ItemCount from "../IntemCount/ItemCount";
 import "./ItemDetail.css"
 
-const ItemDetail = ({id, title, category, price, description, image}) => {
+const ItemDetail = ({id, title, category, price, short_description, long_description, image}) => {
   
   const onAdd = cant => {
     console.log(cant)
@@ -21,7 +21,7 @@ const ItemDetail = ({id, title, category, price, description, image}) => {
           </picture>
           <section className="movie-details">
               <p>Categoria: {category}</p>
-              <p>Descripción: {description}</p>
+              <p>Descripción: {long_description}</p>
               <p>Precio: ${price}</p>
           </section>
         </div>
@@ -32,13 +32,14 @@ const ItemDetail = ({id, title, category, price, description, image}) => {
   )
 }
 
-// ItemDetail.propTypes = {
-//     id: PropTypes.number.isRequired,
-//     title: PropTypes.string.isRequired,
-//     category: PropTypes.string.isRequired,
-//     price: PropTypes.number.isRequired,
-//     description: PropTypes.string.isRequired,
-//     image: PropTypes.string.isRequired
-//   };
+ItemDetail.propTypes = {
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    short_description: PropTypes.string.isRequired,
+    long_description: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired
+  };
 
 export default ItemDetail

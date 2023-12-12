@@ -1,50 +1,56 @@
 [
     {
         "id": 1,
-        "title": "Secrets of the Heart (Secretos del Corazón)",
-        "category": "Drama",
+        "title": "Secretos del corazón",
+        "category": "Comedia|Drama",
         "price": 59,
-        "description": "Una emocionante aventura de acción",
+        "short_description": "historia llena de misterios y secretos en una casa embrujada, desafiando leyendas familiares.",
+        "long_description": "En la España de los años 60, Javi, un niño de nueve años, intenta investigar el misterio de una casa deshabitada que, según su hermano, estaría habitada por muertos. Sus investigaciones le harán descubrir y comprender el mundo de los adultos y sus mentiras.",
         "image": "http://dummyimage.com/250x350.png/dddddd/000000"
     },
     {
         "id": 2,
-        "title": "K.G. (Karate Girl)",
-        "category": "Action",
+        "title": "El Karate Kid",
+        "category": "Acción|Drama|Artes Marciales",
         "price": 95,
-        "description": "Una película de ciencia ficción fascinante",
+        "short_description": "Un instructor japonés de artes marciales acepta enseñar karate a un adolescente acosado.",
+        "long_description": "La madre de Daniel (Ralph Macchio, No puede ser el cielo) consigue un buen trabajo en California y ambos se mudan allí desde Nueva Jersey. En la nueva ciudad, Daniel encuentra pronto el amor, aunque la chica elegida no es quizás la que más le conviene para hacer amigos.\r\n\r\nAli (Elisabeth Shue, Hamlet 2) fue novia del cabecilla de una banda conflictiva que empezará a hacer la vida imposible a Daniel. Las palizas y los insultos a los que tiene que hacer frente consiguen hundir al joven, que, desesperado, pide ayuda a un viejo que lo defiende en una de las cotidianas peleas.\r\n\r\nEl maestro de artes marciales, el señor Miyagi (Pat Morita, Viaje a Maui), introducirá a Daniel en el arte del karate a través de unas técnicas un tanto insuales que el joven no acaba de entender. Además de conseguir la forma física apropiada, Daniel se enfrentará a la búsqueda de sí mismo en cada entrenamiento.",
         "image": "http://dummyimage.com/250x350.png/5fa2dd/ffffff"
     },
     {
         "id":3,
         "title": "Silent Hill",
-        "category": "Fantasy|Horror|Thriller",
+        "category": "Terror|Fantasía",
         "price": 99,
-        "description": "Un drama conmovedor",
+        "short_description": "Rose busca a su hija adoptiva dentro de los límites de un pueblo extraño y desolado llamado Silent Hill.",
+        "long_description": "Rose (Radha Mitchell, El fuego de la verdad) está dispuesta a hacer todo lo posible para salvar a su hija Sharon, que, desde hace años, sufre una misteriosa enfermedad que la consume día tras día. A pesar de las recomendaciones de los médicos, Rose se niega a internar a su hija en una institución psiquiátrica.\r\n\r\nRose, desesperada por encontrar una cura, decide huir al pueblo Silent Hill, ya que su hija, en sueños, repite ese nombre cada noche. Convencida de que la respuesta a la enfermedad se encuentra en el misterioso lugar, se embarca en un viaje hacia lo desconocido.\r\n\r\nCuando van a llegar al pueblo, una misteriosa silueta se planta en su camino. Rose, para no atropellarla, tiene un accidente. Cuando vuelve en sí, Sharon ha desaparecido. Comienza, entonces, la búsqueda de la pequeña junto a la agente de policía Cybil Bennett (Laurie Holden).\r\n\r\nAcompañadas de una niebla espesa, criaturas extrañas y oscuridad, Rose y la agente buscan por todo el pueblo, mientras van desvelando el extraño pasado de un lugar del que ahora parece formar parte la pequeña desaparecida...",
         "image": "http://dummyimage.com/250x350.png/cc0000/ffffff"
     },
     {
         "id":4,
-        "title": "Mummy: Tomb of the Dragon Emperor, The",
-        "category": "Action|Adventure|Fantasy|Thriller",
+        "title": "La Momia: La Tumba del Emperador Dragón",
+        "category": "Aventura|Fantasía",
         "price": 47,
-        "description": "Un drama conmovedor",
+        "short_description": "En el Lejano Oriente, el hijo de unos famosos luchadores de momias, descubre la momia del primer emperador de Qin, una entidad que cambia de forma a la maldición de una hechicera de hace siglos.",
+        "long_description": "La tercera entrega de la saga de La Momia nos lleva esta vez a Asia para una nueva aventura en la que Rick O'Connell (Brendan Fraser) y los suyos librarán un combate sin tregua contra el Emperador Dragón. Desde las catacumbas de la China antigua hasta la cima del Himalaya, el explorador intrépido, su joven hijo Alex, su mujer Evelyn (Maria Bello) y su cuñado Jonathan se enfrentarán a la momia resucitada más cruel que ha conquistado China. Víctimas de una bruja maléfica, el Emperador Dragón y sus 500 soldados han sido relegados por la eternidad al limbo. El inmenso ejército de terracota descansará así 2000 años en el olvido hasta que Alex comete el error de despertar a su jefe. Para evitar una oleada de desastres, Rick tendrá que pedir ayuda a las personas más hábiles que él para combatir a los muertos vivientes: su propia familia...",
         "image": "http://dummyimage.com/250x350.png/5fa2dd/ffffff"
     },
     {
         "id":5,
         "title":"Dinosaurus!",
-        "category":"Adventure|Comedy",
+        "category":"Animación|Aventura|Familia",
         "price":12,
-        "description":"Bypass R Ext Iliac Art to L Femor A w Autol Art, Open",
+        "short_description":"Una emocionante aventura con peligros y lazos prehistóricos",
+        "long_description": "La Tierra, hace sesenta y cinco millones de años. Una colonia de lémures que vive tranquilamente en una isla paradisíaca, encuentra por azar un huevo de dinosaurio. Cuando el cascarón se abre, aparece un pequeño iguanodonte. Los lémures lo acogen y lo bautizan como Aladar, pasando a ser así, a pesar de la evidente diferencia de tamaño, un miembro más de la familia.\r\n\r\nEl dinosaurio crece entre ellos hasta que, un día, un meteorito destruye la isla, obligándolos a todos a huir. Encuentran refugio con un grupo de dinosaurios que buscan la tierra de los Nidos. Aladar no tardará en enfrentarse a Kron, el despiadado líder de la manada, pero también conocerá la amistad y el amor de aquellos de su especie.",
         "image":"http://dummyimage.com/250x350.png/dddddd/000000"
     },
     {
         "id": 6,
         "title": "Dragon Ball Z: Super Android 13!",
-        "category": "Action|Adventure|Animation",
+        "category": "Animación|Aventura|Acción",
         "price": 53,
-        "description": "Un thriller lleno de suspenso",
+        "short_description": "Los luchadores Z deben descubrir la identidad de la persona que está creando androides mortales para atacar a Goku.",
+        "long_description": "La muerte del Dr. Gero a manos de los androides 17 y 18 provoca la activación de los androides 13, 14 y 15. Intentan matar a Goku, quien lucha contra ellos con la ayuda de Trunks, Piccolo, Vegeta, Krillin y Gohan.",
         "image": "http://dummyimage.com/250x350.png/dddddd/000000"
     }
 ]
