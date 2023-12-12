@@ -4,7 +4,6 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-// import data from "../../data/peliculas.json"
 import imagen from '../../../assets/react.svg'
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -48,7 +47,7 @@ function NavBar() {
               <NavDropdown title="Categorias" className="link-nav">
                   {uniqueCategories.map((category, index) => {
                     const lowercaseCategory = category.toLowerCase();
-                    const hrefs = "/peliculas/" + lowercaseCategory;
+                    const hrefs = "/categorias/" + lowercaseCategory;
                     return (
                       <NavDropdown.Item key={index}>
                         <Link to={hrefs}>{category}</Link>
