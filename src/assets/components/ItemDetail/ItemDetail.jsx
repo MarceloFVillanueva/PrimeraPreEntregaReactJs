@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import ItemCount from "../IntemCount/ItemCount";
+
 import "./ItemDetail.css"
 
 const ItemDetail = ({pelicula}) => {

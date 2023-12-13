@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import ItemCount from "../IntemCount/ItemCount";
 
 const Item = ({pelicula}) => {
-
   return (
     <article className="card">
       <header className="movie-title">

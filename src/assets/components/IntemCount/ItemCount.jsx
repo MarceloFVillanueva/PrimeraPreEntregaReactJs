@@ -1,14 +1,27 @@
 import PropTypes from "prop-types";
 import { useCounter } from "../hook/useCounter";
 import "./ItemCount.css"
+import { CartContext } from "../../context/CartContext";
+import { useContext } from "react";
 
 const ItemCount = ({ pelicula }) => {
 
-    const {cantidad,aumentar,disminuir} = useCounter(1,10)
+    const {carrito, setCarrito} = useContext(CartContext);
+
+    const {cantidad,aumentar,disminuir} = useCounter(1,10);
 
     const handleAgregar = () => {
-        pelicula.quantity = cantidad;
-        console.log(pelicula);
+        
+        const peliculaAgregada = {...pelicula,quantity:cantidad};
+        const nuevoCarrito = [...carrito];
+        const estaEnElCarrito = nuevoCarrito.find((producto) => producto.id === peliculaAgregada.id);
+
+        if(estaEnElCarrito) {
+            estaEnElCarrito.quantity += cantidad;
+        }else{
+            nuevoCarrito.push(peliculaAgregada);
+        }
+        setCarrito(nuevoCarrito)
     }
 
     return(
