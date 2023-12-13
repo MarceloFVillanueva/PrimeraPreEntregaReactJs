@@ -2,12 +2,13 @@ import PropTypes from "prop-types";
 import { useCounter } from "../hook/useCounter";
 import "./ItemCount.css"
 
-const ItemCount = ({stock,initial}) => {
+const ItemCount = ({ pelicula }) => {
 
-    const {cantidad,aumentar,disminuir} = useCounter(initial,stock)
-    
+    const {cantidad,aumentar,disminuir} = useCounter(1,10)
+
     const handleAgregar = () => {
-        console.log(cantidad)
+        pelicula.quantity = cantidad;
+        console.log(pelicula);
     }
 
     return(
@@ -28,8 +29,7 @@ const ItemCount = ({stock,initial}) => {
 }
 
 ItemCount.propTypes = {
-    stock: PropTypes.number.isRequired,
-    initial: PropTypes.number.isRequired
-  };
+    pelicula: PropTypes.object.isRequired
+}
 
 export default ItemCount

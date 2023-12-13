@@ -22,7 +22,7 @@ const ItemDetail = ({pelicula}) => {
           </section>
         </div>
         <footer>
-          <ItemCount initial={1} stock={5} />
+          <ItemCount pelicula={pelicula} />
         </footer>
     </article>
   )

@@ -21,7 +21,7 @@ const Item = ({pelicula}) => {
         <p>Precio: ${pelicula.price}</p>
         <Link className="ver-mas" to={`/peliculas/${pelicula.title}`}>Ver más</Link>
       </section>
-      <ItemCount initial={1} stock={5} />
+      <ItemCount pelicula={pelicula} />
     </article>
   )
 }
