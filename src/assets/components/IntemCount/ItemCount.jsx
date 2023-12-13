@@ -6,23 +6,9 @@ import { useContext } from "react";
 
 const ItemCount = ({ pelicula }) => {
 
-    const {carrito, setCarrito} = useContext(CartContext);
+    const {carrito, agregarAlCarrito} = useContext(CartContext);
 
     const {cantidad,aumentar,disminuir} = useCounter(1,10);
-
-    const handleAgregar = () => {
-        
-        const peliculaAgregada = {...pelicula,quantity:cantidad};
-        const nuevoCarrito = [...carrito];
-        const estaEnElCarrito = nuevoCarrito.find((producto) => producto.id === peliculaAgregada.id);
-
-        if(estaEnElCarrito) {
-            estaEnElCarrito.quantity += cantidad;
-        }else{
-            nuevoCarrito.push(peliculaAgregada);
-        }
-        setCarrito(nuevoCarrito)
-    }
 
     return(
         <div className="counter">
@@ -33,7 +19,7 @@ const ItemCount = ({ pelicula }) => {
                 <button className="button" onClick={aumentar}>+</button>
             </div>
             <div>
-                <button className="button btn-carrito" onClick={handleAgregar}>
+                <button className="button btn-carrito" onClick={() => {agregarAlCarrito(pelicula,cantidad)}}>
                     Comprar entrada
                 </button>
             </div>
