@@ -1,8 +1,10 @@
 import PropTypes from "prop-types";
 import "./Item.css"
 import { Link } from "react-router-dom";
+import ItemCount from "../IntemCount/ItemCount";
 
 const Item = ({pelicula}) => {
+
   return (
     <article className="card">
       <header className="movie-title">
@@ -17,11 +19,9 @@ const Item = ({pelicula}) => {
         <p>Categoria: {pelicula.category}</p>
         <p>Descripción: {pelicula.short_description}</p>
         <p>Precio: ${pelicula.price}</p>
+        <Link className="ver-mas" to={`/peliculas/${pelicula.title}`}>Ver más</Link>
       </section>
-      <Link className="ver-mas" to={`/peliculas/${pelicula.title}`}>Ver más</Link>
-      <button className="btn btn-rent">
-        Alquilar
-      </button>
+      <ItemCount initial={1} stock={5} />
     </article>
   )
 }

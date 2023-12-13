@@ -9,7 +9,7 @@ import "./ItemListContainer.css"
 const ItemListContainer = () => {
 
   const [peliculas, setPeliculas] = useState([])
-  const [titulo, setTitulo] = useState("Peliculas para alquilar")
+  const [titulo, setTitulo] = useState("Peliculas en cartelera")
   const categoria = useParams().category
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const ItemListContainer = () => {
         const peliculasFiltradasPorCategoria = categoria ? filtrarPorCategoria({ peliculas: res, categoria }) : res;
         setPeliculas(peliculasFiltradasPorCategoria)
 
-        const tituloNuevo = categoria ? `Peliculas para alquilar - ${categoria}` : "Peliculas para alquilar"
+        const tituloNuevo = categoria ? `Peliculas para ver | categoria: ${categoria}` : "Peliculas en cartelera"
         setTitulo(tituloNuevo)
       })
       .catch((error) => {

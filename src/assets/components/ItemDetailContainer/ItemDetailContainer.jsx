@@ -18,11 +18,11 @@ const ItemDetailContainer = () => {
             .catch(err =>{
                 console.log(err)
             })
-    }, [])
+    }, [title])
     
     return (
         <div className="cards-container">
-            <ItemDetail {...pelicula}/>
+            {pelicula && <ItemDetail pelicula={pelicula} />}
         </div>
     )
 }

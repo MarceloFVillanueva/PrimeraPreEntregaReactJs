@@ -2,44 +2,34 @@ import PropTypes from "prop-types";
 import ItemCount from "../IntemCount/ItemCount";
 import "./ItemDetail.css"
 
-const ItemDetail = ({id, title, category, price, short_description, long_description, image}) => {
-  
-  const onAdd = cant => {
-    console.log(cant)
-  }
+const ItemDetail = ({pelicula}) => {
 
   return (
     <article className="container">
         <header className="movie-title">
-            <h2>
-                {title}
-            </h2>
+            <h1>
+                {pelicula.title}
+            </h1>
         </header>
         <div className="card-detail">
           <picture className="movie-image">
-              <img src={image} alt={`img-${title}`} />
+              <img src={pelicula.image} alt={`img-${pelicula.title}`} />
           </picture>
           <section className="movie-details">
-              <p>Categoria: {category}</p>
-              <p>Descripción: {long_description}</p>
-              <p>Precio: ${price}</p>
+              <p>Categoria: {pelicula.category}</p>
+              <p>Descripción: {pelicula.long_description}</p>
+              <p>Precio: ${pelicula.price}</p>
           </section>
         </div>
         <footer>
-          <ItemCount initial={1} stock={10} onAdd={onAdd}/>
+          <ItemCount initial={1} stock={5} />
         </footer>
     </article>
   )
 }
 
 ItemDetail.propTypes = {
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    short_description: PropTypes.string.isRequired,
-    long_description: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired
+    pelicula: PropTypes.object.isRequired
   };
 
 export default ItemDetail
