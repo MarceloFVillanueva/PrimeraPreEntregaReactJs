@@ -4,22 +4,22 @@ import "./ItemCount.css"
 import { CartContext } from "../../context/CartContext";
 import { useContext } from "react";
 
-const ItemCount = ({ pelicula }) => {
+const ItemCount = ({ movie }) => {
 
-    const {agregarAlCarrito} = useContext(CartContext);
+    const {addOnCart} = useContext(CartContext);
 
-    const {cantidad,aumentar,disminuir} = useCounter(1,10);
+    const {quantity,increase,decrease} = useCounter(1,10);
 
     return(
         <div className="counter">
             <h5>Cantidad de Entradas:</h5>
             <div className="controls">
-                <button className="button" onClick={disminuir}>-</button>
-                <h4 className="number">{cantidad}</h4>
-                <button className="button" onClick={aumentar}>+</button>
+                <button className="button" onClick={decrease}>-</button>
+                <h4 className="number">{quantity}</h4>
+                <button className="button" onClick={increase}>+</button>
             </div>
             <div>
-                <button className="button btn-carrito" onClick={() => {agregarAlCarrito(pelicula,cantidad)}}>
+                <button className="button btn-carrito" onClick={() => {addOnCart(movie,quantity)}}>
                     Comprar entrada
                 </button>
             </div>
@@ -28,7 +28,7 @@ const ItemCount = ({ pelicula }) => {
 }
 
 ItemCount.propTypes = {
-    pelicula: PropTypes.object.isRequired
+    movie: PropTypes.object.isRequired
 }
 
 export default ItemCount

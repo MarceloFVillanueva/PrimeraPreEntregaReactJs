@@ -1,23 +1,23 @@
 import { useState } from "react";
 
 export const useCounter = (initial,stock) => {
-    const [cantidad,setCantidad] = useState(initial)
+    const [quantity,setQuantity] = useState(initial)
 
-    const aumentar = () => {
-        if(cantidad < stock){
-            setCantidad(cantidad+1)
+    const increase = () => {
+        if(quantity < stock){
+            setQuantity(quantity+1)
         }
     }
 
-    const disminuir = () => {
-        if(cantidad >= 1){
-            setCantidad(cantidad-1)
+    const decrease = () => {
+        if(quantity >= 1){
+            setQuantity(quantity-1)
         }
     }
 
     return {
-        cantidad,
-        aumentar,
-        disminuir
+        quantity,
+        increase,
+        decrease
     }
 }

@@ -22,3 +22,7 @@ Para generar archivo build y subirlo a Netifly
     Subir carpeta "dist" y listo
 
     Link de la página subida a Netifly: https://superb-kulfi-47a6cd.netlify.app
+
+    Página subida: https://superb-kulfi-47a6cd.netlify.app
+    
+Tanto la carpeta de data y help la sigo dejando para recordar que hice antes de Firestore

@@ -3,7 +3,7 @@ import ItemListContainer from './assets/components/ItemListContainer/ItemListCon
 import ItemDetailContainer from './assets/components/ItemDetailContainer/ItemDetailContainer';
 import Nosotros from './assets/components/Nosotros/Nosotros';
 import { BrowserRouter,Route, Routes } from 'react-router-dom';
-import Carrito from './assets/components/Carrito/Carrito';
+import CartContainer from './assets/components/CartContainer/CartContainer';
 import { CartProvider } from './assets/context/CartContext';
 
 import './App.css';
@@ -19,11 +19,11 @@ function App() {
 
           <Routes>
             <Route path="/" element={<ItemListContainer />} />
-            <Route path='/Nosotros' element={<Nosotros />} />
+            <Route path='/nosotros' element={<Nosotros />} />
             <Route path='/peliculas' element={<ItemDetailContainer />} />
             <Route path='/peliculas/:id' element={<ItemDetailContainer />} />
             <Route path='/categorias/:category' element={<ItemListContainer />} />
-            <Route path='/carrito' element={<Carrito />} />
+            <Route path='/carrito' element={<CartContainer />} />
           </Routes>
         </BrowserRouter>
       </CartProvider>

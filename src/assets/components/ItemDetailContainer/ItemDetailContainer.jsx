@@ -7,7 +7,7 @@ import "./ItemDetailContainer.css"
 
 const ItemDetailContainer = () => {
 
-    const [pelicula,setPelicula] = useState()
+    const [movie,setMovie] = useState()
     const id = useParams().id;
 
     useEffect(() => {
@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
         const docSnapshot = await getDoc(queryDoc);
   
         if (docSnapshot.exists()) {
-          setPelicula({ id: docSnapshot.id, ...docSnapshot.data() });
+          setMovie({ id: docSnapshot.id, ...docSnapshot.data() });
         } else {
           console.log('El documento no existe');
         }   
@@ -31,7 +31,7 @@ const ItemDetailContainer = () => {
 
     return (
         <div className="cards-container">
-            {pelicula && <ItemDetail pelicula={pelicula} />}
+            {movie && <ItemDetail movie={movie} />}
         </div>
     )
 

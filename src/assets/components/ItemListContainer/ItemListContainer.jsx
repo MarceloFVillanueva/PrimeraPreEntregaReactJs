@@ -1,40 +1,37 @@
 import { useState,useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
+import { Loading } from "../Loading/Loading";
 import ItemList from "../ItemList/ItemList";
 
 import "./ItemListContainer.css"
-import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 
 
 
 
 const ItemListContainer = () => {
 
-  const Loading = () => {
-    return <h2>Cargando...</h2>
-  }
-
-  const [peliculas, setPeliculas] = useState([])
+  const [movies, setMovies] = useState([])
   const [ loading, setLoading ]   = useState(true)
-  const [titulo, setTitulo] = useState("Peliculas en cartelera")
-  const categoria = useParams().category
+  const [title, setTitle] = useState("Peliculas en cartelera")
+  const category = useParams().category
 
   useEffect(() => {
 
     const dbFirestore = getFirestore();
     const queryCollection = collection(dbFirestore, 'peliculas');
 
-    const tituloNuevo = categoria ? `Peliculas para ver | categoria: ${categoria}` : "Peliculas en cartelera"
-    setTitulo(tituloNuevo)
+    const tituloNuevo = category ? `Peliculas para ver | categoria: ${category}` : "Peliculas en cartelera"
+    setTitle(tituloNuevo)
     
-    const queryFilter = categoria ? query(queryCollection, where('category', 'array-contains', categoria)) : queryCollection
+    const queryFilter = category ? query(queryCollection, where('category', 'array-contains', category)) : queryCollection
     
     getDocs(queryFilter)
-      .then(res => { setPeliculas( res.docs.map(pelicula => ({ id: pelicula.id , ...pelicula.data() }) ) )})
+      .then(res => { setMovies( res.docs.map(pelicula => ({ id: pelicula.id , ...pelicula.data() }) ) )})
       .catch(err => console.log(err)) 
       .finally(() => setLoading(false))
       
-  }, [categoria]);
+  }, [category]);
 
   return (
     <div>
@@ -42,7 +39,7 @@ const ItemListContainer = () => {
         loading ?
           <Loading />
           :
-          <ItemList peliculas={peliculas} titulo={titulo} /> 
+          <ItemList movies={movies} title={title} /> 
       }
     </div>
   )

@@ -3,33 +3,33 @@ import "./Item.css"
 import { Link } from "react-router-dom";
 import ItemCount from "../IntemCount/ItemCount";
 
-const Item = ({pelicula}) => {
+const Item = ({movie}) => {
 
-  const categoria = pelicula.category.join('|');
+  const categoria = movie.category.join('|');
 
   return (
     <article className="card">
       <header className="movie-title">
         <h2>
-          {pelicula.title}
+          {movie.title}
         </h2>
       </header>
       <picture className="movie-image">
-        <img src={pelicula.image} alt={pelicula.title} />
+        <img src={movie.image} alt={movie.title} />
       </picture>
       <section className="movie-details">
         <p>Categoria: {categoria}</p>
-        <p>Descripción: {pelicula.short_description}</p>
-        <p>Precio: ${pelicula.price}</p>
-        <Link className="ver-mas" to={`/peliculas/${pelicula.id}`}>Ver más</Link>
+        <p>Descripción: {movie.short_description}</p>
+        <p>Precio: ${movie.price}</p>
+        <Link className="ver-mas" to={`/peliculas/${movie.id}`}>Ver más</Link>
       </section>
-      <ItemCount pelicula={pelicula} />
+      <ItemCount movie={movie} />
     </article>
   )
 }
 
 Item.propTypes = {
-    pelicula: PropTypes.object.isRequired
+    movie: PropTypes.object.isRequired
   };
 
 export default Item

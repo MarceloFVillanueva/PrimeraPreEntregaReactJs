@@ -4,37 +4,37 @@ import { Link } from "react-router-dom";
 
 import "./ItemDetail.css"
 
-const ItemDetail = ({pelicula}) => {
+const ItemDetail = ({movie}) => {
 
-  const categoria = pelicula.category.join('|');
+  const category = movie.category.join('|');
 
   return (
     <article className="container">
         <header className="movie-title">
             <h1>
-                {pelicula.title}
+                {movie.title}
             </h1>
         </header>
         <div className="card-detail">
           <picture className="movie-image">
-              <img src={pelicula.image} alt={`img-${pelicula.title}`} />
+              <img src={movie.image} alt={`img-${movie.title}`} />
           </picture>
           <section className="movie-details-long">
-              <p>Categoria: {categoria}</p>
-              <p>Descripción: {pelicula.long_description}</p>
-              <p>Precio: ${pelicula.price}</p>
+              <p>Categoria: {category}</p>
+              <p>Descripción: {movie.long_description}</p>
+              <p>Precio: ${movie.price}</p>
               <Link className="button" to="/" >Volver</Link>
           </section>
         </div>
         <footer>
-          <ItemCount pelicula={pelicula} />
+          <ItemCount movie={movie} />
         </footer>
     </article>
   )
 }
 
 ItemDetail.propTypes = {
-    pelicula: PropTypes.object.isRequired
+    movie: PropTypes.object.isRequired
   };
 
 export default ItemDetail
