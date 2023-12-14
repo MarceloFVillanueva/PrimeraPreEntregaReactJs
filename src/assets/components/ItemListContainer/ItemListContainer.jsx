@@ -1,7 +1,5 @@
 import { useState,useEffect } from "react";
 import { useParams } from "react-router-dom";
-// import pedirPeliculas from "../../help/pedirPeliculas"
-// import filtrarPorCategoria from "../../help/filtrarPeliculaPorCategoria";
 import ItemList from "../ItemList/ItemList";
 
 import "./ItemListContainer.css"
