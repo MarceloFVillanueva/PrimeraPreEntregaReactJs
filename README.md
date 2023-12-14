@@ -9,4 +9,16 @@ Currently, two official plugins are available:
 
 Para correr React debemos
 
-$ npm run dev
+    $ npm run dev
+
+Para generar archivo build y subirlo a Netifly
+
+    $ npm run build
+
+    Ingresar a:
+        https://app.netlify.com/teams/marcelofvillanueva/sites (si es la primera vez)
+        https://app.netlify.com/sites/superb-kulfi-47a6cd/deploys (si ya existe la página)
+
+    Subir carpeta "dist" y listo
+
+    Link de la página subida a Netifly: https://superb-kulfi-47a6cd.netlify.app
