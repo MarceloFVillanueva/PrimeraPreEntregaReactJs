@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import ItemCount from "../IntemCount/ItemCount";
 
 const Item = ({pelicula}) => {
+
+  const categoria = pelicula.category.join('|');
+
   return (
     <article className="card">
       <header className="movie-title">
@@ -15,7 +18,7 @@ const Item = ({pelicula}) => {
         <img src={pelicula.image} alt={pelicula.title} />
       </picture>
       <section className="movie-details">
-        <p>Categoria: {pelicula.category}</p>
+        <p>Categoria: {categoria}</p>
         <p>Descripción: {pelicula.short_description}</p>
         <p>Precio: ${pelicula.price}</p>
         <Link className="ver-mas" to={`/peliculas/${pelicula.id}`}>Ver más</Link>

@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 
 import "./ItemListContainer.css"
-import { collection, doc, getDoc, getDocs, getFirestore } from "firebase/firestore";
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 
 
 
@@ -21,33 +21,32 @@ const ItemListContainer = () => {
   const [titulo, setTitulo] = useState("Peliculas en cartelera")
   const categoria = useParams().category
 
-  // useEffect(() => {
-  //   pedirPeliculas()
-  //     .then((res) => {
-  //       const peliculasFiltradasPorCategoria = categoria ? filtrarPorCategoria({ peliculas: res, categoria }) : res;
-  //       setPeliculas(peliculasFiltradasPorCategoria)
-
-  //       const tituloNuevo = categoria ? `Peliculas para ver | categoria: ${categoria}` : "Peliculas en cartelera"
-  //       setTitulo(tituloNuevo)
-  //     })
-  //     .catch((error) => {
-  //       console.log(error)
-  //     })
-  // },[categoria])
-
   useEffect(() => {
 
     const dbFirestore = getFirestore();
     const queryCollection = collection(dbFirestore, 'peliculas');
 
-    getDocs(queryCollection)
-      .then(res => {
-        setPeliculas( res.docs.map(pelicula => ({ id: pelicula.id , ...pelicula.data() }) ) )
-      })
-      .catch(err => console.log(err))
+    if (categoria){
+
+      const tituloNuevo = categoria ? `Peliculas para ver | categoria: ${categoria}` : "Peliculas en cartelera"
+      setTitulo(tituloNuevo)
+      
+      const queryFilter = query(queryCollection, where('category', 'array-contains', categoria))
+      
+      getDocs(queryFilter)
+      .then(res => { setPeliculas( res.docs.map(pelicula => ({ id: pelicula.id , ...pelicula.data() }) ) )})
+      .catch(err => console.log(err)) 
       .finally(() => setLoading(false))
-    
-  }, []);
+
+    } else{
+
+      getDocs(queryCollection)
+        .then(res => { setPeliculas( res.docs.map(pelicula => ({ id: pelicula.id , ...pelicula.data() }) ) )})
+        .catch(err => console.log(err))
+        .finally(() => setLoading(false))
+    }
+      
+  }, [categoria]);
 
   return (
     <div>

@@ -7,26 +7,26 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import imagen from '../../../assets/react.svg'
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import pedirPeliculas from "../../help/pedirPeliculas";
 
 import './NavBar.css'
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 function NavBar() {
 
   const [products, setProducts] = useState([])
 
-  useEffect(()=> {
-    pedirPeliculas()
-    .then((res) => {
-      setProducts(res)
-    })
-    .catch((err) =>{
-      console.log(err)
-    })
-  }, [])
+  useEffect(() => {
+
+    const dbFirestore = getFirestore();
+    const queryCollection = collection(dbFirestore, 'peliculas');
+
+    getDocs(queryCollection)
+        .then(res => { setProducts( res.docs.map(pelicula => ({ id: pelicula.id , ...pelicula.data() }) ) )})
+        .catch(err => console.log(err))
+  }, []);
 
   const allCategories = products.reduce((categories, product) => {
-    const productCategories = product.category.split('|');
+    const productCategories = product.category;
     return categories.concat(productCategories);
   }, []);
   const uniqueCategories = [...new Set(allCategories)];
@@ -46,8 +46,7 @@ function NavBar() {
               </Nav.Link>
               <NavDropdown title="Categorias" className="link-nav">
                   {uniqueCategories.map((category, index) => {
-                    const lowercaseCategory = category.toLowerCase();
-                    const hrefs = "/categorias/" + lowercaseCategory;
+                    const hrefs = `/categorias/${category}`;
                     return (
                       <NavDropdown.Item key={index}>
                         <Link to={hrefs}>{category}</Link>

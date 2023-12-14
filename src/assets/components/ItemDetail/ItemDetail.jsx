@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 import "./ItemDetail.css"
 
 const ItemDetail = ({pelicula}) => {
-  
+
+  const categoria = pelicula.category.join('|');
+
   return (
     <article className="container">
         <header className="movie-title">
@@ -18,7 +20,7 @@ const ItemDetail = ({pelicula}) => {
               <img src={pelicula.image} alt={`img-${pelicula.title}`} />
           </picture>
           <section className="movie-details-long">
-              <p>Categoria: {pelicula.category}</p>
+              <p>Categoria: {categoria}</p>
               <p>Descripción: {pelicula.long_description}</p>
               <p>Precio: ${pelicula.price}</p>
               <Link className="button" to="/" >Volver</Link>

@@ -8,24 +8,13 @@ import "./ItemDetailContainer.css"
 const ItemDetailContainer = () => {
 
     const [pelicula,setPelicula] = useState()
-    const pid = useParams().id;
-
-    // useEffect(()=>{
-    //     const dbFirestore = getFirestore()
-    //     const queryDoc = doc(dbFirestore, 'products', "52AyjXOCuM27uuzqtzcV") 
-    //     getDoc(queryDoc)
-    //     .then(res => {
-    //         setPelicula( { id: res.id , ...res.data() } )
-    //         console.log(res)
-    //     })
-    //     .catch(err => console.log(err))
-    // },[pid])
+    const id = useParams().id;
 
     useEffect(() => {
     const fetchData = async () => {
       try {
         const dbFirestore = getFirestore();
-        const queryDoc = doc(dbFirestore, 'peliculas', pid);
+        const queryDoc = doc(dbFirestore, 'peliculas', id);
         const docSnapshot = await getDoc(queryDoc);
   
         if (docSnapshot.exists()) {
@@ -38,7 +27,7 @@ const ItemDetailContainer = () => {
       }
     };
       fetchData();
-    }, []);
+    }, [id]);
 
     return (
         <div className="cards-container">
