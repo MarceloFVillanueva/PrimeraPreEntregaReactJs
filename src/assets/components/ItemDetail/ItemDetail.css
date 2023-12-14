@@ -4,3 +4,11 @@
     justify-content: space-around;
     align-items: center;
 }
+
+.movie-details-long{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

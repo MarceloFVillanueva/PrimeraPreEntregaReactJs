@@ -6,7 +6,7 @@ import { useContext } from "react";
 
 const ItemCount = ({ pelicula }) => {
 
-    const {carrito, agregarAlCarrito} = useContext(CartContext);
+    const {agregarAlCarrito} = useContext(CartContext);
 
     const {cantidad,aumentar,disminuir} = useCounter(1,10);
 

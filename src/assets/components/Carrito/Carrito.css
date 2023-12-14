@@ -1,0 +1,30 @@
+.card-cart{
+    margin: 30px;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.card-cart img{
+    height: 200px;
+    margin: 20px 40px 20px 20px;
+}
+
+.cart-detail{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cart-control{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-control button{
+    height: min-content;
+}
