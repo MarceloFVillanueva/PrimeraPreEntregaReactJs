@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
-import "./Item.css"
 import { Link } from "react-router-dom";
 import ItemCount from "../IntemCount/ItemCount";
+
+import "./Item.css"
 
 const Item = ({movie}) => {
 
@@ -15,7 +16,7 @@ const Item = ({movie}) => {
         </h2>
       </header>
       <picture className="movie-image">
-        <img src={movie.image} alt={movie.title} />
+        <img src={movie.image} alt={`img-${movie.title}`} />
       </picture>
       <section className="movie-details">
         <p>Categoria: {categoria}</p>
