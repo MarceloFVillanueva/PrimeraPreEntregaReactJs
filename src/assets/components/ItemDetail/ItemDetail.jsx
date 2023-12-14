@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "./ItemDetail.css"
 
 const ItemDetail = ({pelicula}) => {
-
+  
   return (
     <article className="container">
         <header className="movie-title">
