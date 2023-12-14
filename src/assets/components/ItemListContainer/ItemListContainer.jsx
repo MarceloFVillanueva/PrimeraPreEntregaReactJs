@@ -24,25 +24,15 @@ const ItemListContainer = () => {
     const dbFirestore = getFirestore();
     const queryCollection = collection(dbFirestore, 'peliculas');
 
-    if (categoria){
-
-      const tituloNuevo = categoria ? `Peliculas para ver | categoria: ${categoria}` : "Peliculas en cartelera"
-      setTitulo(tituloNuevo)
-      
-      const queryFilter = query(queryCollection, where('category', 'array-contains', categoria))
-      
-      getDocs(queryFilter)
+    const tituloNuevo = categoria ? `Peliculas para ver | categoria: ${categoria}` : "Peliculas en cartelera"
+    setTitulo(tituloNuevo)
+    
+    const queryFilter = categoria ? query(queryCollection, where('category', 'array-contains', categoria)) : queryCollection
+    
+    getDocs(queryFilter)
       .then(res => { setPeliculas( res.docs.map(pelicula => ({ id: pelicula.id , ...pelicula.data() }) ) )})
       .catch(err => console.log(err)) 
       .finally(() => setLoading(false))
-
-    } else{
-
-      getDocs(queryCollection)
-        .then(res => { setPeliculas( res.docs.map(pelicula => ({ id: pelicula.id , ...pelicula.data() }) ) )})
-        .catch(err => console.log(err))
-        .finally(() => setLoading(false))
-    }
       
   }, [categoria]);
 

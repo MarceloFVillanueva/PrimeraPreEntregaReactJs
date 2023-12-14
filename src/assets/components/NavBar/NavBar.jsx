@@ -29,6 +29,7 @@ function NavBar() {
     const productCategories = product.category;
     return categories.concat(productCategories);
   }, []);
+  
   const uniqueCategories = [...new Set(allCategories)];
 
   return (
