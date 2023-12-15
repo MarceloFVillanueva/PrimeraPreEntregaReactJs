@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { CartContext } from "../../context/CartContext"
 import { Link } from "react-router-dom";
 import { addDoc, collection, getFirestore } from 'firebase/firestore'
+import Formulario from "../Formulario/Formulario";
 
 import "./CartContainer.css"
 
@@ -62,6 +63,7 @@ const CartContainer = () => {
                 <h2>Precio Total: ${totalPrice()}</h2>
                 <button onClick={handleEmptyCart}>Vaciar</button>
                 <br />
+                <Formulario />
                 <button onClick={finishBuying}>Terminar Compra</button>
             </> :
             <h4>El cart está vacío...</h4>
