@@ -2,12 +2,14 @@ import { useEffect, useState } from "react"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import { useParams } from "react-router-dom"
 import { doc, getDoc, getFirestore } from "firebase/firestore"
+import { Loading } from "../Loading/Loading"
 
 import "./ItemDetailContainer.css"
 
 const ItemDetailContainer = () => {
 
     const [movie,setMovie] = useState()
+    const [isLoading,setIsLoading] = useState(true)
     const id = useParams().id;
 
     useEffect(() => {
@@ -24,6 +26,8 @@ const ItemDetailContainer = () => {
         }   
       } catch (error) {
         console.log(error);
+      } finally {
+        setIsLoading(false)
       }
     };
       fetchData();
@@ -31,7 +35,12 @@ const ItemDetailContainer = () => {
 
     return (
         <div className="cards-container">
-            {movie && <ItemDetail movie={movie} />}
+            {
+              isLoading ? 
+                <Loading />
+              :
+                <ItemDetail movie={movie} />
+            }
         </div>
     )
 
