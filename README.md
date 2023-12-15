@@ -31,6 +31,7 @@ Tanto la carpeta de data y help la sigo dejando para recordar que hice antes de 
 
 
 | Plugin | VERSION | README |
+| ----------- | ----------- | ----------|
 | bootstrap | 5.3.2 | Importación para estilado |
 | firebase | 10.7.1 | Plataforma de base de datos |
 | prop-types | 15.8.1 | Importación para especificar y validar tipos de props  |
